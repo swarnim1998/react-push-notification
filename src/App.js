@@ -16,7 +16,6 @@ import {
 import {useState} from 'react'
 import firebase from './firebase-config'
 import "firebase/messaging";
-import './firebase-messaging-sw'
 
 function App() {
 const [newPage, setNewPage] = useState(true)
