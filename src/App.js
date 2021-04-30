@@ -33,16 +33,15 @@ return (
     <div className="App">
       {
         newPage?<div>
-          <div>
-            <h4>
-              {token}
-            </h4>
-          </div>
          <Home setNewPage={setNewPage} newPage={newPage}/>
          <Articles />
          <Services />
-         <News/> 
+         <News/>
+         <div>
+           <input placeholder={token}></input>  
+         </div> 
         </div>: <Orders />
+        
       }
       
     </div>
