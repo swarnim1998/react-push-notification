@@ -19,12 +19,13 @@ import "firebase/messaging";
 
 function App() {
 const [newPage, setNewPage] = useState(true)
-
+const [token, setToken] = useState('')
 const msg = firebase.messaging();
 const vapidKey = "BNvB16RkknCnapJcR4tt0lnOzqStlLnE8WPqtZ9-a6IzPho1Y1x-TOVcAsOuda_b4Ph0tov-jfn8dsqA0eIF15M"
     // Add the public key generated from the console here. 
   msg.getToken({vapidKey: vapidKey}).then((token)=>{
-    console.log(token)
+    console.log(token) 
+    setToken(token) 
   })
 
 
@@ -32,6 +33,11 @@ return (
     <div className="App">
       {
         newPage?<div>
+          <div>
+            <h4>
+              {token}
+            </h4>
+          </div>
          <Home setNewPage={setNewPage} newPage={newPage}/>
          <Articles />
          <Services />
